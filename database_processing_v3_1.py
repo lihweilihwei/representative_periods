@@ -261,6 +261,9 @@ def process_single_day_period(database: str, hours: list):
         
         # There might be nothing under the threshold if using few rep days
         if not pd.isna(thresh_dsd):
+
+            thresh_dsd += 1e-12  # Small buffer to avoid floating point issues
+
             # Set to zero where the proportion exceeds the threshold
             # If there are duplicate dsd values on the threshold these are all left in
             # This leaves everything in in the case of a flatline demand
