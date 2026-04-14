@@ -205,7 +205,7 @@ model_years:
   - 2035
   - 2040
   - 2045
-  - 2050
+  # - 2050
 
 # Example of how the timeseries parameter can be nested, reflecting the directory structure
 # Directories -> dictionaries, CSVs in the bottom as a list (which can be empty)
