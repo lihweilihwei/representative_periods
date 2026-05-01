@@ -36,11 +36,22 @@ A toolkit for processing CANOE databases to apply representative periods using c
     **Source file:** `./timeseriesaggregation.py` (in this root directory)
 
     **Destination:**
-    Find where `tsam` is installed. It is typically located at:
-    - Windows: `C:\Users\<user>\miniconda3\envs\canoe-backend\Lib\site-packages\tsam\`
-    - Linux/Mac: `~/miniconda3/envs/canoe-backend/lib/python3.12/site-packages/tsam/`
+    Find where `tsam` is installed. You can find the exact path by running:
+    ```bash
+    python -c "import tsam, os; print(os.path.dirname(tsam.__file__))"
+    ```
+    It is typically located at:
+    - **Windows**: `C:\Users\<user>\miniconda3\envs\canoe-backend\Lib\site-packages\tsam\`
+    - **macOS / Linux**: `~/miniconda3/envs/canoe-backend/lib/python3.12/site-packages/tsam/` 
+      *(Note: On Apple Silicon Macs, this might be under `miniforge3` instead of `miniconda3`)*
 
-    *Replace the existing file in that directory with the one from this repo.*
+    *Replace the existing `timeseriesaggregation.py` file in that directory with the one from this repo.*
+
+    **macOS / Linux Shortcut:**
+    If you have your conda environment activated, you can run this command from the `representative_periods` directory to automatically patch the file:
+    ```bash
+    cp ./timeseriesaggregation.py $(python -c "import tsam, os; print(os.path.dirname(tsam.__file__))")/
+    ```
 
 ## Usage
 
